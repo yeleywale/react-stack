@@ -26,7 +26,9 @@ module.exports = {
             	test: /\.jsx?$/,
             	//exclude: /node_modules/,
 							include: path.join(__dirname, 'src'),
-            	loader: 'react-hot!babel'
+              loader: 'babel'
+ 							//loader: 'react-hot!babel'
+
             }
 		]
 	}

@@ -5,7 +5,7 @@ class App extends React.Component {
        super();
        this.state = {
           messages: [
-             "hallo there how are you?",
+             "hallo there how are you, hope you are fine?",
              "Hi I am fine, and you?"
           ]
        };
