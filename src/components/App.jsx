@@ -1,32 +1,35 @@
 import React from 'react';
+import MessageList from './MessageList.jsx';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import mui from 'material-ui';
+import AppBar from 'material-ui/AppBar';
+
+var ThemeManager = new mui/Styles.ThemeManager();
+var Colors = mui/Styles/Colors;
 
 class App extends React.Component {
     constructor(){
        super();
-       this.state = {
-          messages: [
-             "hallo there how are you, hope you are fine?",
-             "Hi I am fine, and you?"
-          ]
-       };
+}
+
+static childContextTypes = {
+   muiTheme: React.PropTypes.object
+}
+
+getChildContext(){
+  return {
+    muiTheme: ThemeManager.getCurrentTheme()
+  };
+}
+
+render(){
+    return (
+      <div>
+         <AppBar title="BigField Awesome Chat App" />
+         <MessageList />
+      </div>
+     );
     }
-
-    render(){
-       debugger;
-       var messageNodes = this.state.messages.map((message) => {
-          return (
-             <div style={{color: 'red'}}>{message}</div>
-          );
-       });
-
-       return (
-       // render should always return only one element
-          <div>{messageNodes}</div>
-       );
-    }
-
-
-    // We need to inst that components and add it to the dom
-
 }
 export default App;

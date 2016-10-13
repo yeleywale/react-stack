@@ -1,6 +1,7 @@
 import React from "react-dom"
 import React2 from "react";
 import App from "./components/App.jsx";
+// require('./main.scss');
 
 
 //Rendering the components here

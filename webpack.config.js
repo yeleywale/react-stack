@@ -26,10 +26,14 @@ module.exports = {
             	test: /\.jsx?$/,
             	//exclude: /node_modules/,
 							include: path.join(__dirname, 'src'),
-              loader: 'babel'
+              loader: 'react-hot-loader/webpack!babel'
  							//loader: 'react-hot!babel'
-
-            }
+            },
+						{
+							test: /\.scss$/,
+							include: path.join(__dirname, 'src'),
+							loader: 'style!css!sass'
+						}
 		]
 	}
 }
